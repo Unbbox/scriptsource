@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      document.write("원주율 ", Math.PI, "<br>");
+      document.write("버림 ", Math.floor(3.649), "<br>");
+      document.write("올림 ", Math.ceil(3.649), "<br>");
+      document.write("절대값 ", Math.abs(-3), "<br>");
+      document.write("최대값 ", Math.max(5, 1, 3, 16, 95, 25), "<br>");
+      document.write("최소값 ", Math.min(5, 1, 3, 16, 95, 25), "<br>");
+      document.write("0 <= x < 1 ", Math.random(), "<br>");
+
+      // Math.random() * 6 + 1
+      document.write("0 <= x < 10 ", Math.random() * 10, "<br>");
+      document.write("0 <= x < 10 ", Math.floor(Math.random() * 10), "<br>");
+      document.write("0 <= x < 11 ", Math.floor(Math.random() * 11), "<br>");
+
+      // 120 ~ 150
+      document.write("120 <= x < 151 ", Math.random() * 31 + 120, "<br>");
+
+      // 주사위 2개 던져서 두 주사위 눈의 합이 6이면 실행 멈추기
+
+      // Back-Tics : `문자열 출력 "Jenny"` or 변수와 문자와 같이 출력
+
+      while (true) {
+        let dice1 = Math.floor(Math.random() * 6 + 1);
+        let dice2 = Math.floor(Math.random() * 6 + 1);
+
+        let sum = dice1 + dice2;
+        // document.write("두 주사위의 합 : ", sum, "<br>");
+        document.write(`(${dice1}, ${dice2})`, "<br><br>");
+        document.write(`문자열 출력 "Jenny"`);
+        if (sum == 6) {
+          alert("프로그램을 종료합니다!");
+          break;
+        }
+      }
+
+      // 이번 주 로또 번호 1 ~ 45
+      // 6개 번호 추출하여 배열에 담은 후 출력(동일한 번호는 담지 말기)
+      const lotto = [];
+
+      while (true) {
+        let dice = Math.floor(Math.random() * 45 + 1);
+        if (!lotto.includes(dice)) lotto.push(dice);
+
+        if (lotto.length == 6) break;
+      }
+
+      document.write("<br><br>", lotto.sort());
+    </script>
+  </body>
+</html>

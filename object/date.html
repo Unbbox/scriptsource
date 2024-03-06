@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const now = new Date();
+
+      document.write(now, "<br>");
+      document.write("연도 ", now.getFullYear(), "<br>");
+      document.write("월 ", now.getMonth() + 1, "<br>"); // 1월 : 0
+      document.write("일 ", now.getDate(), "<br>");
+      document.write("시 ", now.getHours(), "<br>");
+      document.write("분 ", now.getMinutes(), "<br>");
+      document.write("초 ", now.getSeconds(), "<br>");
+      document.write("날짜를 문자열로 ", now.toLocaleString(), "<br>");
+    </script>
+  </body>
+</html>

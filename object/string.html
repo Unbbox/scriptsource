@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const str = "Hello Javascript";
+      // const str = new String("Hello Javascript");
+
+      document.write("특정 위치 문자 반환 ", str.charAt(4), "<br>");
+      document.write("문자 위치 반환 ", str.indexOf("a"), "<br>");
+      document.write("문자 변경 ", str.replace("J", "j"), "<br>");
+      document.write("문자 추출 ", str.substring(6), "<br>");
+      document.write("문자 추출 ", str.substring(6, 10), "<br>");
+      document.write("문자 추출 ", str.slice(6, 10), "<br>");
+      document.write("문자 공백 제거 ", "   Hello   ".trim(), "<br>");
+      document.write("대문자 변경 ", str.toUpperCase(), "<br>");
+      document.write("소문자 변경 ", str.toLowerCase(), "<br>");
+
+      // 소문자로 영문 이름 입력받기 abcde
+      // 전화번호 입력 받기 : 000-0000-0000
+      // 이름은 대문자로 변경 후 출력
+      // 전화번호는 010-####-1234
+      const name = prompt("소문자로 이름 입력");
+      const tel = prompt("전화번호 입력(010-0000-0000 형태)");
+
+      document.write("이름 : ", name.toUpperCase(), "<br>");
+      const mask = tel.substring(4, 8);
+      document.write("전화번호 : ", tel.replace(mask, "####"));
+    </script>
+  </body>
+</html>

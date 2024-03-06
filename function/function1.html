@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 함수 : 단독으로 존재
+      // 메소드 : 객체 안에 선언된 함수, 객체 생성 후 호출
+
+      // 함수 정의
+      // 1. function 키워드
+      // function 함수명(params 나열) {
+      //   해야할 일..
+      // }
+
+      // 두 개의 파라미터를 받아서 곱하기 한 후 결과 리턴
+      function myFunction(a, b) {
+        return a * b;
+      }
+
+      // 2. 함수 표현식
+      // 파라미터 값이 안넘어오는 경우 undefined 임
+      // b = 10; 값이 안 넘어오면 기본값의 의미
+      const myFunction2 = function (a, b = 10) {
+        return a * b;
+      };
+
+      // func 이름은 외부에서 사용 불가
+      // func 이름은 내부에서 사용
+      const myFunction4 = function func(a, b) {
+        return a * b;
+      };
+
+      // Arrow Function(화살표 함수)
+      const myFunction3 = (a, b) => a * b;
+
+      // 3. 즉시 호출 함수 : 무조건 실행해야하는 함수일 때 사용
+      (function () {
+        document.write("hello");
+      })();
+
+      // 함수 사용 - 호출
+      let result = myFunction(3, 4);
+      document.write("<br>", "result = " + result);
+      document.write("<br>", "result = " + myFunction2(4, 5));
+      document.write("<br>", "result = " + myFunction3(6, 5));
+      document.write("<br>", "result = " + myFunction4(7, 8));
+
+      document.write("<br>", "result = " + myFunction2(4));
+    </script>
+  </body>
+</html>

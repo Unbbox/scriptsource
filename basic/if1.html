@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+        조건문
+        true : 0 제외 숫자, "문자", [], {}
+        false : 0, "", null, undefined, NaN
+    -->
+    <script>
+      // 현재 날짜와 시간
+      const date = new Date();
+      console.log(date);
+
+      // 시간 추출
+      const hour = date.getHours();
+
+      if (hour < 12) {
+        console.log("오전");
+      } else {
+        console.log("오후");
+      }
+
+      // alert()
+      // prompt()
+      // isNaN()
+
+      // 사용자한테 숫자 입력 받은 후 숫자가 양수, 음수 구별
+      //   let num1 = Number(prompt("숫자 입력"));
+      let num1 = parseInt(prompt("숫자 입력"));
+
+      // 사용자로부터 입력받는 모든 값들은 string 형태
+      console.log(typeof num1);
+      // Not a Number
+      console.log(isNaN(num1)); // abc => true, 123 => false
+
+      if (num1 >= 0) {
+        console.log("양수");
+      } else {
+        console.log("음수");
+      }
+    </script>
+  </body>
+</html>
