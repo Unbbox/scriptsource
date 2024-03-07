@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <style>
+      #header {
+        color: red;
+        font-size: 50px;
+      }
+    </style> -->
+  </head>
+  <body>
+    <h1 id="header" class="header one">Header</h1>
+    <img src="https://placehold.co/200" alt="샘플이미지" />
+    <div>
+      <a href="https://www.naver.com">네이버</a>
+    </div>
+    <script>
+      // 요소 변경
+      // 속성 변경, 스타일 변경
+
+      // img 태그의 src와 alt 변경
+      const img = document.querySelector("img");
+      // src, alt 속성 조회
+      console.log(img.getAttribute("src"));
+      console.log(img.getAttribute("alt"));
+      console.log(img.src, " ", img.alt);
+
+      // src, alt 속성 변경
+      img.setAttribute("src", "./left-arrow.png");
+      img.setAttribute("alt", "왼쪽화살표");
+
+      img.src = "./right-arrow.png";
+      img.alt = "오른쪽화살표";
+
+      // a href 변경, text
+      // 네이버를 다음으로 변경
+      const aTag = document.querySelector("a");
+      console.log(aTag.href);
+      console.log(aTag.innerText);
+      aTag.href = "https://www.daum.net";
+      aTag.innerText = "다음";
+
+      // 스타일 변경
+      const header = document.querySelector("#header");
+      header.style.color = "red";
+      header.style.fontSize = "50px";
+      header.style.border = "3px solid aqua";
+      header.style.borderRadius = "5px";
+
+      // class 변경
+      // classList 속성 : 클래스명 모두 가져오기
+      //   console.log(header.class); // undefined => 값이 없음
+      console.log(header.classList);
+
+      // 클래스 이름 변경 one => two
+      header.classList.replace("one", "two");
+
+      // 클래스 이름 추가
+      header.classList.add("three");
+
+      // 클래스 이름 제거
+      header.classList.remove("two");
+
+      // toggle : 한 개가 2개의 기능을 제공
+      //          shift
+      header.classList.toggle("four"); // header three four
+      header.classList.toggle("three"); // header four
+    </script>
+  </body>
+</html>

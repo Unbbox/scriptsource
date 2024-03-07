@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function 작성
+      // 1. function 키워드 사용 방식 add 함수 정의
+      function add(a, b) {
+        return a + b;
+      }
+
+      let result = add(5, 8);
+      document.write("a + b = " + result + "<br>");
+
+      // 2. 1번을 함수 표현식으로 바꿔서 작성
+      const add2 = function (a, b) {
+        return a + b;
+      };
+      result = add2(6, 8);
+      document.write("a + b = " + result + "<br>");
+
+      // 3. 1번을 화살표 함수 바꿔서 작성
+      const add3 = (a, b) => a + b;
+      result = add3(7, 8);
+      document.write("a + b = " + result + "<br>");
+
+      // 4. 1~10까지 숫자를 더해서 결과를 리턴하는 함수 작성
+      const add4 = function () {
+        let sum = 0;
+        for (let i = 1; i <= 10; i++) {
+          sum += i;
+        }
+        return sum;
+      };
+      result = add4();
+      document.write("1~10 sum = " + result + "<br>");
+
+      // 5. 입력되는 숫자가 3의 배수이면 "박수" 출력, 아니면 "통과" => multiple(num)
+      function multiple(num) {
+        if (num % 3 == 0) {
+          document.write("박수", "<br>");
+        } else {
+          document.write("통과", "<br>");
+        }
+      }
+
+      // 6. 입력되는 숫자가 3의 배수이면 "박수" 출력, 9의 배수이면 "박수x2" 출력, 아니면 "통과" => multiple2(num)
+      function multiple2(num) {
+        if (num % 3 == 0) {
+          if (num % 9 == 0) {
+            document.write("박수x2", "<br>");
+          }
+          document.write("박수", "<br>");
+        } else {
+          document.write("통과", "<br>");
+        }
+      }
+
+      // 7. 두 개 과목의 점수를 받아서 합이 120 이상이면 합격(단 한 과목이 40점 미만이면 과락으로 불합격)
+      function pass(a, b) {
+        const jumsu = a + b;
+
+        if (a >= 40 && b >= 40 && jumsu >= 120) {
+          document.write("합격", "<br>");
+        } else {
+          document.write("불합격");
+        }
+      }
+
+      // 8. 3의 배수에서 박수를 치는게 아니라 끝자리가 3, 6, 9로 끝나는 숫자라면 "박수" 아니면 "통과" => multiple3(num)
+      function multiple3(num) {
+        let digit = num % 10;
+        if (digit == 3 || digit == 6 || digit == 9) {
+          document.write("박수", "<br>");
+        } else {
+          document.write("통과", "<br>");
+        }
+      }
+    </script>
+  </body>
+</html>
