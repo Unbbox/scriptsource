@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .text-danger {
+      color: red;
+    }
+  </style>
+  <body>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam quod reiciendis in nisi amet. Dolorem repellat eos reiciendis deleniti
+      quibusdam ea culpa quos id, deserunt, quo, sit iusto voluptates neque!<br />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea at nesciunt magnam hic, veniam dolore. Tempora nisi eum facilis porro, ad ea nulla
+      aliquam animi est optio maxime eligendi voluptates.<br />
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam nulla minus ullam laboriosam praesentium impedit qui debitis ipsum sint, optio
+      hic rem nam illum eius. Officiis vel laudantium suscipit saepe.
+    </p>
+    <p id="match"></p>
+    <form action="" method="post">
+      <div>
+        <label for="userid"> 아이디 </label>
+        <input type="text" name="userid" id="userid" />
+        <small class="text-danger"></small>
+      </div>
+      <div>
+        <label for="name"> 이름 </label>
+        <input type="text" name="name" id="name" />
+        <small class="text-danger"></small>
+      </div>
+      <div>
+        <button type="submit">전송</button>
+      </div>
+    </form>
+    <script>
+      // ipsum 문자 찾기
+
+      // 원본 문자열 가져오기
+      const p = document.querySelector("p").innerText;
+      // 패턴 생성
+      const regEx = /ipsum/g;
+
+      document.querySelector("#match").innerText = p.match(regEx);
+
+      // 폼 submit 이 일어나면
+      // 아이디 유효성 검증
+      // 영문자, 숫자 조합으로 6~12자리 허용
+      // 123abc53, abced123, a123def
+
+      // 이름을 가져와서 유효성 검증
+      // 2~5 자리여야 하고, 한글이 입력되어야 한다.
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = document.querySelector("#name");
+        const id = document.querySelector("#id");
+
+        const text = document.querySelector(".text-danger");
+        const regEx2 = /^[가-힣]{2,5}$/;
+
+        if (!regEx2.test(name.value)) {
+          name.nextElementSibling.innerHTML = "이름을 확인해주세요.";
+          document.querySelector("input[type='text']").focus();
+        } else {
+          name.nextElementSibling.innerHTML = "적합한 이름입니다.";
+          name.nextElementSibling.style.color = "green";
+          name.innerHTML;
+        }
+      });
+    </script>
+  </body>
+</html>

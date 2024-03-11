@@ -10,10 +10,15 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <style>
+      .card {
+        width: 18rem;
+      }
+    </style>
   </head>
   <body>
     <div class="container card-group">
-      <div class="card" style="width: 18rem">
+      <div class="card">
         <img src="https://www.placeholder.com/600" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -21,7 +26,7 @@
           <a href="#" class="btn btn-primary">주문하기</a>
         </div>
       </div>
-      <div class="card" style="width: 18rem">
+      <div class="card">
         <img src="https://www.placeholder.com/600" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -29,7 +34,7 @@
           <a href="#" class="btn btn-primary">주문하기</a>
         </div>
       </div>
-      <div class="card" style="width: 18rem">
+      <div class="card">
         <img src="https://www.placeholder.com/600" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -49,6 +54,18 @@
 
       console.log(products[1]); // {id: 1, price: 55000, title: "Springfield Shirt"}
       console.log(products[1].title); //
+
+      // products 값 화면 출력
+      // 디자인 영역 가져오기 => products 값 삽입
+      const cards = document.querySelectorAll(".card");
+      cards.forEach((card, idx) => {
+        console.log(card, " ", idx);
+        console.log(card.querySelector("h5").innerHTML);
+        console.log(card.querySelector("p > span").innerHTML);
+
+        card.querySelector("h5").innerHTML = products[idx].title;
+        card.querySelector("p > span").innerHTML = products[idx].price;
+      });
     </script>
   </body>
 </html>
