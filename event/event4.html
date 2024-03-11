@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <style>
+      body {
+        background-color: green;
+      }
+    </style> -->
+  </head>
+  <body>
+    <form action="" method="get">
+      <input type="radio" name="gender" id="" value="남" /> 남자 <input type="radio" name="gender" id="" value="여" /> 여자
+    </form>
+    <script>
+      // 라디오를 클릭하면 해당 색상을 body 배경색으로 변경
+      //   const gender = document.querySelectorAll("input[name='gender']");
+
+      //   gender.forEach((gender) => {
+      //     gender.addEventListener("click", (e) => {
+      //       console.log(e.target.value);
+      //     });
+      //   });
+      // 이벤트 버블링
+      const form = document.querySelector("form");
+      form.addEventListener("click", (e) => {
+        console.log(e.target.value);
+
+        // e.target : 이벤트가 발생한 실제 대상
+        // e.currentTarget : 이벤트 버블링으로 이벤트가 발생한 모든 요소
+        console.log("currentTarget ", e.currentTarget);
+      });
+    </script>
+  </body>
+</html>

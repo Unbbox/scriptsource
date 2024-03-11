@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div * {
+        padding: 10px;
+        margin: 10px;
+      }
+
+      [readonly] {
+        background-color: lightgrey;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>숫자 맞추기 게임</h3>
+    <p>
+      이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.<br />
+      숫자는 1 ~ 100 사이에 있습니다.
+    </p>
+    <div>
+      <label>
+        숫자 <input type="text" name="num" id="num" size="5" />
+        <button type="button">확인</button>
+      </label>
+    </div>
+    <div>
+      <label> 추측 횟수 <input type="text" name="count" id="count" size="5" readonly /> </label>
+    </div>
+    <div>
+      <label> 힌트 <input type="text" name="hint" id="hint" readonly /> </label>
+    </div>
+    <script>
+      // 1 ~ 100 사이의 임의의 수 생성
+      const answer = Math.floor(Math.random() * 100) + 1;
+      // 추측횟수 변수 선언 : 사용자가 숫자를 몇 번 추측했는지 증가
+      let count = 0;
+
+      // 임의의 수를 알아맞추는 게임
+      // 버튼 클릭
+
+      document.querySelector("button").addEventListener("click", (e) => {
+        // 힌트 : 더 큰수를 입력하세요 or 더 작은 수를 입력하세요 or 정답입니다
+        const num = parseInt(document.querySelector("#num").value);
+        let result = "";
+        count++;
+
+        if (num == answer) {
+          // 정답입니다 라면 버튼을 못 누르게 하기
+          result = "정답입니다.";
+          e.target.disabled = true;
+        } else if (num > answer) {
+          result = "더 작은 수를 입력하세요";
+        } else if (num < answer) {
+          result = "더 큰 수를 입력하세요";
+        }
+
+        document.querySelector("#count").value = count;
+        document.querySelector("#hint").value = result;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    ?
+    <script>
+      // change : 값의 변화가 일어나고, 포커스가 빠질 때 발생
+      // input : 입력하면서 바로바로 발생
+      // blur : 값의 변화와 상관없이 포커스만 빠지면 발생
+      ?
+
+      const word3 = document.getElementById("word3");
+      word3.addEventListener("blur", (e) => {
+        e.target.value = e.target.value.toLowerCase();
+      });
+
+      const select = document.querySelector("select");
+      //   select.addEventListener("change", (e) => console.log(e.target.value));
+      select.addEventListener("input", (e) => console.log(e.target.value)); // select에선 input 도 가능
+    </script>
+  </body>
+</html>

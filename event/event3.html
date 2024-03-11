@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <style>
+      body {
+        background-color: green;
+      }
+    </style> -->
+  </head>
+  <body>
+    <form action="" method="get">
+      <input type="radio" name="color" id="" value="green" /> 녹색 <input type="radio" name="color" id="" value="blue" /> 파랑
+    </form>
+    <script>
+      // 라디오를 클릭하면 해당 색상을 body 배경색으로 변경
+      //   const btn = document.querySelectorAll("input[type=radio]"); // 다른 라디오 버튼이 있을 수 있기 때문에 조건을 type으로 지정하기 보단 name으로 지정
+      const btn = document.querySelectorAll("input[name=color]");
+
+      btn.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          document.body.style.backgroundColor = e.target.value;
+        });
+      });
+    </script>
+  </body>
+</html>
